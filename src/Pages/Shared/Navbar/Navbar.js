@@ -10,6 +10,15 @@ const Navbar = () => {
     <li className='font-medium'><Link to='/blogs'>Blogs</Link></li>
     <li className='font-medium'><Link to='/login'>Login</Link></li>
 
+    {/* {
+      user?.uid ?
+        <>
+          <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
+          <li className='font-medium'><button onClick={handleLogOut}>SignOut</button></li>
+        </>
+        :
+        <li className='font-medium'><Link to='/login'>Login</Link></li>
+    } */}
   </React.Fragment>;
   return (
     <div>
