@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/logo.png';
+
 
 
 const Navbar = () => {
@@ -7,7 +9,6 @@ const Navbar = () => {
     <li className='font-medium'><Link to='/'>Home</Link></li>
     <li className='font-medium'><Link to='/blogs'>Blogs</Link></li>
     <li className='font-medium'><Link to='/login'>Login</Link></li>
-
 
   </React.Fragment>;
   return (
@@ -22,7 +23,10 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost normal-case text-xl">Mobile Planet</Link>
+          <Link to='/' className="btn btn-ghost normal-case text-xl pl-0">
+            <img className='h-14' src={logo} alt="" />
+            <h2 className='text-2xl'>Dream Architects</h2>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
