@@ -7,7 +7,7 @@ const ErrorPage = () => {
     <div className='text-center'>
       <img className=' w-96 h-96 mx-auto' src={img} alt="" />
       <h2 className='text-3xl text-red-500'>This Route is Not Exist</h2>
-      <Link to='/home'><button className='mt-5 px-4 py-2 rounded bg-primary text-white font-bold'>Go Back to Home Page</button></Link>
+      <Link to='/'><button className='mt-5 px-4 py-2 rounded bg-primary text-white font-bold'>Go Back to Home Page</button></Link>
     </div>
   );
 };
