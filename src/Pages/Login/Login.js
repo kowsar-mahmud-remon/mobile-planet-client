@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
-
   const { register, formState: { errors }, handleSubmit } = useForm();
+  const { signIn } = useContext(AuthContext);
+  const [loginError, setLoginError] = useState('');
+  const [loginUserEmail, setLoginUserEmail] = useState('');
 
+  // const [token] = useToken(loginUserEmail);
+
+  // const location = useLocation();
+  // const navigate = useNavigate();
+
+  // const from = location.state?.from?.pathname || '/';
+
+  // if (token) {
+  //   navigate(from, { replace: true });
+  // }
 
   const handleLogin = data => {
     console.log(data);
+    setLoginError('');
 
+    signIn(data.email, data.password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        // setLoginUserEmail(data.email);
+      })
+      .catch(error => {
+        console.log(error.message);
+        setLoginError(error.message);
+      });
 
   };
   return (
@@ -43,6 +67,7 @@ const Login = () => {
 
           <input className='btn btn-primary w-full' value='Login' type="submit" />
           <div className="">
+            {loginError && <p className='text-red-600'>{loginError}</p>}
           </div>
         </form>
         <p>New to Mobile Planer <Link className='text-primary' to='/signup'>Create a new Account</Link></p>
