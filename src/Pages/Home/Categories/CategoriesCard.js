@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CategoriesCard = ({ card }) => {
-  const { brandName, logo } = card;
+  const { _id, brandName, logo } = card;
 
   return (
     // <div className='card text-white p-6 lg:card-side shadow-xl'>
@@ -10,7 +11,7 @@ const CategoriesCard = ({ card }) => {
       <figure><img className=' h-72 w-full' src={logo} alt="Shoes" /></figure>
       <div className="card-body">
         <div className="card-actions justify-center">
-          <button className="btn btn-primary">{brandName}</button>
+          <Link to={`/category/${_id}`}><button className="btn btn-primary">{brandName}</button></Link>
         </div>
       </div>
     </div>

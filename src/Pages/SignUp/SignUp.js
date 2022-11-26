@@ -28,10 +28,6 @@ const SignUp = () => {
       category: data.category
     };
 
-
-
-
-
     setSignUPError('');
     createUser(data.email, data.password)
       .then(result => {
@@ -66,6 +62,7 @@ const SignUp = () => {
         console.log(error);
         setSignUPError(error.message);
       });
+
 
   };
 
