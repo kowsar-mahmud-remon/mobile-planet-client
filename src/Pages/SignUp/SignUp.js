@@ -7,7 +7,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const SignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
 
   const [signUpError, setSignUPError] = useState('');
 
@@ -66,6 +66,43 @@ const SignUp = () => {
 
   };
 
+  // const users = {
+  //   name: user.displayName,
+  //   email: user.email,
+  //   category: 'Buyer'
+  // };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+
+        const users = {
+          name: user.displayName,
+          email: user.email,
+          category: 'Buyer'
+        };
+
+        fetch('http://localhost:5000/users', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(users)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log('addUser', data);
+          });
+
+
+        navigate('/');
+      })
+      .catch(error => console.error(error));
+  };
+
+
   return (
     <div className='h-[700px] flex justify-center items-center'>
       <div className='w-96 p-7'>
@@ -112,7 +149,7 @@ const SignUp = () => {
         </form>
         <p>Already have an account <Link className='text-primary' to="/login">Please Login</Link></p>
         <div className="divider">OR</div>
-        <button className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+        <button onClick={handleGoogleSignIn} className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
 
       </div>
     </div>
