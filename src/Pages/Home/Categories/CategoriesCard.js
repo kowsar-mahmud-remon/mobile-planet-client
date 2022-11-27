@@ -11,7 +11,7 @@ const CategoriesCard = ({ card }) => {
       <figure><img className=' h-72 w-full' src={logo} alt="Shoes" /></figure>
       <div className="card-body">
         <div className="card-actions justify-center">
-          <Link to={`/category/${_id}`}><button className="btn btn-primary">{brandName}</button></Link>
+          <Link to={`/category/${brandName}`}><button className="btn btn-primary">{brandName}</button></Link>
         </div>
       </div>
     </div>
