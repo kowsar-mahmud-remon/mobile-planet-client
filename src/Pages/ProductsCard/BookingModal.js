@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const BookingModal = ({ booking }) => {
   const { user } = useContext(AuthContext);
-  const { name, resale_price } = booking;
+  const { name, resale_price, img } = booking;
   const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const navigate = useNavigate();
 
   const handleSaveBooking = (data) => {
     console.log('data', data);
@@ -17,6 +21,7 @@ const BookingModal = ({ booking }) => {
       price: data.price,
       user_location: data.user_location,
       user_phone: data.user_phone,
+      img: img
     };
 
     fetch('http://localhost:5000/orders', {
@@ -29,6 +34,10 @@ const BookingModal = ({ booking }) => {
       .then(res => res.json())
       .then(data => {
         console.log('addUserInfo', data);
+        if (data.acknowledged) {
+          toast.success('Order Successful');
+          navigate('/');
+        }
       });
 
   };
