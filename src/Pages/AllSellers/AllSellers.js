@@ -17,12 +17,12 @@ const AllSellers = () => {
   // });
   // console.log("singleuser", singleuser);
 
-  const urll = `http://localhost:5000/users?category=Seller`;
+  const url = `http://localhost:5000/users?category=Seller`;
 
   const { data: allsellers = [] } = useQuery({
     queryKey: ['users', user?.email],
     queryFn: async () => {
-      const res = await fetch(urll);
+      const res = await fetch(url);
       const data = await res.json();
       return data;
     }

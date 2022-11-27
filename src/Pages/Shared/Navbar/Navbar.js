@@ -26,6 +26,7 @@ const Navbar = () => {
           <li className='font-medium'><Link to='/myproducts'>My Product</Link></li>
           <li className='font-medium'><Link to='/addproduct'>Add A Product</Link></li>
           <li className='font-medium'><Link to='/allsellers'>All Sellers</Link></li>
+          <li className='font-medium'><Link to='/allbuyers'>All Buyers</Link></li>
           <li className='font-medium'><button onClick={handleLogOut}>SignOut</button></li>
         </>
         :
