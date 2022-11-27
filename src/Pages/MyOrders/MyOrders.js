@@ -4,7 +4,6 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
-  console.log('userrrrr', user?.email);
 
 
   const url = `http://localhost:5000/orders?email=${user?.email}`;
