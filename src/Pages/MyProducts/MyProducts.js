@@ -1,10 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useSeller from '../../hooks/useSeller';
 import MyProductsCard from './MyProductsCard';
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
+  const [isSeller] = useSeller(user?.email);
+
 
   const url = `http://localhost:5000/products?email=${user?.email}`;
 

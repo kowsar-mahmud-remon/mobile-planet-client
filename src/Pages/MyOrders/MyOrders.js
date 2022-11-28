@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useBuyer from '../../hooks/useBuyer';
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
-
+  const [isBuyer] = useBuyer(user?.email);
 
   const url = `http://localhost:5000/orders?email=${user?.email}`;
 

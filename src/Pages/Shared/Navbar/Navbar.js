@@ -3,12 +3,17 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
+import useBuyer from '../../../hooks/useBuyer';
+import useSeller from '../../../hooks/useSeller';
 
 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email);
+  const [isSeller] = useSeller(user?.email);
+  const [isBuyer] = useBuyer(user?.email);
+
 
   const handleLogOut = () => {
     logOut()
@@ -23,13 +28,21 @@ const Navbar = () => {
     {
       isAdmin && <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
     }
+    {
+      isSeller && <>
+        <li className='font-medium'><Link to='/myproducts'>My Product</Link></li>
+        <li className='font-medium'><Link to='/addproduct'>Add A Product</Link></li>
+      </>
+
+    }
+    {
+      isBuyer && <li className='font-medium'><Link to='/myorders'>My Orders</Link></li>
+
+    }
 
     {
       user?.uid ?
         <>
-          <li className='font-medium'><Link to='/myorders'>My Orders</Link></li>
-          <li className='font-medium'><Link to='/myproducts'>My Product</Link></li>
-          <li className='font-medium'><Link to='/addproduct'>Add A Product</Link></li>
           <li className='font-medium'><button onClick={handleLogOut}>SignOut</button></li>
         </>
         :

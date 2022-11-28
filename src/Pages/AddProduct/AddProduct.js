@@ -3,19 +3,20 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useSeller from '../../hooks/useSeller';
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
+  const [isSeller] = useSeller(user?.email);
+
+
+
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const navigate = useNavigate();
 
-  // const { img, name, resale_price, original_price, years_of_use, posted_time, seller_name, condition_type, mobile_number, location, product_category, description, Year_of_purchase } = product;
-
 
   const handleAddProduct = (data) => {
-    console.log('data', data);
-    console.log(data);
 
 
     const productDetails = {
