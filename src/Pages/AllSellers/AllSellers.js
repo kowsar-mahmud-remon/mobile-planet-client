@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const AllSellers = () => {
@@ -19,7 +20,7 @@ const AllSellers = () => {
 
   const url = `http://localhost:5000/users?category=Seller`;
 
-  const { data: allsellers = [] } = useQuery({
+  const { data: allsellers = [], isLoading, refetch } = useQuery({
     queryKey: ['users', user?.email],
     queryFn: async () => {
       const res = await fetch(url);
@@ -27,7 +28,32 @@ const AllSellers = () => {
       return data;
     }
   });
-  console.log('category', allsellers);
+  // console.log('category', allsellers);
+
+  const handleDelete = (allseller) => {
+    const proceed = window.confirm('Are you sure, you delete Seller?');
+    if (proceed) {
+      fetch(`http://localhost:5000/users/${allseller?._id}`, {
+        method: 'DELETE'
+
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            refetch();
+            toast.success(`Seller Deleted Successfully`);
+          }
+        });
+    }
+
+  };
+
+  if (isLoading) {
+    return <div className='text-center my-20'>
+      <button className="btn btn-square btn-outline border-0 loading text-success"></button>
+    </div>;
+  }
 
 
   return (
@@ -58,7 +84,7 @@ const AllSellers = () => {
                 <td className=''>{allseller?.email}</td>
                 <td className=''>{allseller?.category}</td>
                 <td className=''>
-                  <button className="btn btn-sm btn-error">X</button>
+                  <button onClick={() => handleDelete(allseller)} className="btn btn-sm btn-error">X</button>
                 </td>
               </tr>)
             }

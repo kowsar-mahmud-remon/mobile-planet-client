@@ -14,7 +14,7 @@ const Advertised = () => {
     <div className="">
 
       {
-        advertised.length &&
+        advertised?.length &&
         <div className='mt-10 mb-20'>
           <div className='text-center my-10'>
             <h2 className='text-4xl font-bold'>Advertise Product</h2>
