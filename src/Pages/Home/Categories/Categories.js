@@ -5,7 +5,7 @@ const Categories = () => {
 
   const { data: mobileCategory = [] } = useQuery({
     queryKey: ['mobileCategory'],
-    queryFn: () => fetch('http://localhost:5000/mobileCategory')
+    queryFn: () => fetch('https://mobile-planet-server.vercel.app/mobileCategory')
       .then(res => res.json())
   });
 

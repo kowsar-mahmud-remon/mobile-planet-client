@@ -12,7 +12,7 @@ const MyProductsCard = ({ product, isLoading, refetch }) => {
       img, name, resale_price, original_price, years_of_use, posted_time, seller_name, condition_type, mobile_number, location, product_category, description, Year_of_purchase
     };
 
-    fetch('http://localhost:5000/advertised', {
+    fetch('https://mobile-planet-server.vercel.app/advertised', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -33,7 +33,7 @@ const MyProductsCard = ({ product, isLoading, refetch }) => {
   const handleDelete = (product) => {
     const proceed = window.confirm('Are you sure, you delete Seller?');
     if (proceed) {
-      fetch(`http://localhost:5000/products/${product?._id}`, {
+      fetch(`https://mobile-planet-server.vercel.app/products/${product?._id}`, {
         method: 'DELETE'
 
       })

@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const AllBuyers = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `http://localhost:5000/users?category=Buyer`;
+  const url = `https://mobile-planet-server.vercel.app/users?category=Buyer`;
 
   const { data: allsellers = [], isLoading, refetch } = useQuery({
     queryKey: ['users', user?.email],
@@ -20,7 +20,7 @@ const AllBuyers = () => {
   const handleDelete = (allseller) => {
     const proceed = window.confirm('Are you sure, you delete Buyer?');
     if (proceed) {
-      fetch(`http://localhost:5000/users/${allseller?._id}`, {
+      fetch(`https://mobile-planet-server.vercel.app/users/${allseller?._id}`, {
         method: 'DELETE'
 
       })

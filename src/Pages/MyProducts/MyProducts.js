@@ -9,7 +9,7 @@ const MyProducts = () => {
   const [isSeller] = useSeller(user?.email);
 
 
-  const url = `http://localhost:5000/products?email=${user?.email}`;
+  const url = `https://mobile-planet-server.vercel.app/products?email=${user?.email}`;
 
   const { data: products = [], isLoading, refetch } = useQuery({
     queryKey: ['products', user?.email],

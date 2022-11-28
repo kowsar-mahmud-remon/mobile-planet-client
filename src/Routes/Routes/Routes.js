@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/category/:product_category',
         element: <PrivateRoute><Category></Category></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.product_category}`)
+        loader: ({ params }) => fetch(`https://mobile-planet-server.vercel.app/products/${params.product_category}`)
       },
       {
         path: '/myorders',

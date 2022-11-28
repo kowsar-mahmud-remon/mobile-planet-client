@@ -35,7 +35,7 @@ const SignUp = () => {
         console.log('user', user);
         toast('User Created Successfully.');
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://mobile-planet-server.vercel.app/users', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -84,7 +84,7 @@ const SignUp = () => {
           category: 'Buyer'
         };
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://mobile-planet-server.vercel.app/users', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
