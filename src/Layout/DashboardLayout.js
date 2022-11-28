@@ -15,6 +15,7 @@ const DashboardLayout = () => {
       <div className="flex justify-center my-5">
         <ul><li className='py-3 px-5 bg-primary mr-2 text-white rounded'><Link to='/dashboard/allsellers'>All Sellers</Link></li></ul>
         <ul><li className='py-3 px-5 bg-primary mr-2 text-white rounded'><Link to='/dashboard/allbuyers'>All Buyers</Link></li></ul>
+        <ul><li className='py-3 px-5 bg-primary mr-2 text-white rounded'><Link to='/dashboard/reported'>Reported Items</Link></li></ul>
       </div>
 
       <Outlet></Outlet>

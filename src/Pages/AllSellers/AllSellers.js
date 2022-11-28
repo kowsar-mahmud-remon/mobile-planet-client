@@ -6,18 +6,6 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const AllSellers = () => {
   const { user } = useContext(AuthContext);
 
-
-  // const url = `http://localhost:5000/users?email=${user?.email}`;
-  // const { data: singleuser = [] } = useQuery({
-  //   queryKey: ['users', user?.email],
-  //   queryFn: async () => {
-  //     const res = await fetch(url);
-  //     const data = await res.json();
-  //     return data;
-  //   }
-  // });
-  // console.log("singleuser", singleuser);
-
   const url = `http://localhost:5000/users?category=Seller`;
 
   const { data: allsellers = [], isLoading, refetch } = useQuery({
@@ -28,7 +16,6 @@ const AllSellers = () => {
       return data;
     }
   });
-  // console.log('category', allsellers);
 
   const handleDelete = (allseller) => {
     const proceed = window.confirm('Are you sure, you delete Seller?');
@@ -71,6 +58,7 @@ const AllSellers = () => {
               <th>Email</th>
               <th>Category</th>
               <th>Delete</th>
+              <th>Verify</th>
             </tr>
           </thead>
           <tbody>
@@ -85,6 +73,9 @@ const AllSellers = () => {
                 <td className=''>{allseller?.category}</td>
                 <td className=''>
                   <button onClick={() => handleDelete(allseller)} className="btn btn-sm btn-error">X</button>
+                </td>
+                <td className=''>
+                  <button className="btn btn-sm btn-primary">Verify </button>
                 </td>
               </tr>)
             }

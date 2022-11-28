@@ -2,7 +2,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const MyProductsCard = ({ product }) => {
+const MyProductsCard = ({ product, isLoading, refetch }) => {
   const { img, name, resale_price, original_price, years_of_use, posted_time, seller_name, condition_type, mobile_number, location, product_category, description, Year_of_purchase } = product;
 
   const navigate = useNavigate();
@@ -30,6 +30,31 @@ const MyProductsCard = ({ product }) => {
 
   };
 
+  const handleDelete = (product) => {
+    const proceed = window.confirm('Are you sure, you delete Seller?');
+    if (proceed) {
+      fetch(`http://localhost:5000/products/${product?._id}`, {
+        method: 'DELETE'
+
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            refetch();
+            toast.success(`Product Deleted Successfully`);
+          }
+        });
+    }
+
+  };
+
+  if (isLoading) {
+    return <div className='text-center my-20'>
+      <button className="btn btn-square btn-outline border-0 loading text-success"></button>
+    </div>;
+  }
+
   return (
     <div className="card border border-gray-300 bg-base-200 shadow-xl">
       <figure><img className='w-full h-60' src={img} alt="Shoes" /></figure>
@@ -47,7 +72,7 @@ const MyProductsCard = ({ product }) => {
         <div className="card-actions mt-5 justify-between">
           <button className="btn btn-primary">Available </button>
           <button onClick={handleAdvertised} className="btn btn-info">Advertise </button>
-          <button className="btn btn-error">Delete </button>
+          <button onClick={() => handleDelete(product)} className="btn btn-error">Delete</button>
         </div>
 
       </div>
