@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useAdmin from '../../../hooks/useAdmin';
 
 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = useAdmin(user?.email);
 
   const handleLogOut = () => {
     logOut()
@@ -18,6 +20,9 @@ const Navbar = () => {
   const menuItems = <React.Fragment>
     <li className='font-medium'><Link to='/'>Home</Link></li>
     <li className='font-medium'><Link to='/blogs'>Blogs</Link></li>
+    {
+      isAdmin && <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
+    }
 
     {
       user?.uid ?
@@ -25,8 +30,6 @@ const Navbar = () => {
           <li className='font-medium'><Link to='/myorders'>My Orders</Link></li>
           <li className='font-medium'><Link to='/myproducts'>My Product</Link></li>
           <li className='font-medium'><Link to='/addproduct'>Add A Product</Link></li>
-          <li className='font-medium'><Link to='/allsellers'>All Sellers</Link></li>
-          <li className='font-medium'><Link to='/allbuyers'>All Buyers</Link></li>
           <li className='font-medium'><button onClick={handleLogOut}>SignOut</button></li>
         </>
         :
