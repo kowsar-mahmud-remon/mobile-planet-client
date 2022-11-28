@@ -156,7 +156,7 @@ const AddProduct = () => {
             {errors.description && <p className='text-red-500'>{errors.description.message}</p>}
           </div>
 
-          <input className='btn btn-primary w-full mt-4' value="Sign Up" type="submit" />
+          <input className='btn btn-primary w-full mt-4' value="Add Product" type="submit" />
           {/* {signUpError && <p className='text-red-600'>{signUpError}</p>} */}
 
         </form>
