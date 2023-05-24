@@ -49,9 +49,15 @@ const Navbar = () => {
         <li className='font-medium'><Link to='/login'>Login</Link></li>
     }
   </React.Fragment>;
+
+  const navbarShadow = {
+    boxShadow: '0 3px 4px rgba(0, 0, 0, 0.4)',
+  };
+
+
   return (
     <div>
-      <div className="navbar bg-primary text-white flex justify-between shadow-lg">
+      <div className="navbar bg-primary text-white flex justify-between" style={navbarShadow}>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

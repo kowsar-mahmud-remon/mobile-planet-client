@@ -4,7 +4,7 @@ import './Banner.css';
 
 const Banner = () => {
   return (
-    <div className="hero bannerImg py-10 text-white">
+    <div className="hero bannerImg py-10 text-white mt-5">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={mobile} className="rounded-sm  lg:w-1/2" alt='' />
         <div>
