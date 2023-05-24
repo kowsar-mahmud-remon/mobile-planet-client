@@ -54,7 +54,6 @@ const Navbar = () => {
     boxShadow: '0 3px 4px rgba(0, 0, 0, 0.4)',
   };
 
-
   return (
     <div>
       <div className="navbar bg-primary text-white flex justify-between" style={navbarShadow}>
