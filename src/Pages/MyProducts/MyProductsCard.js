@@ -56,8 +56,8 @@ const MyProductsCard = ({ product, isLoading, refetch }) => {
   }
 
   return (
-    <div className="card border border-gray-300 bg-base-200 shadow-xl">
-      <figure><img className='w-full h-60' src={img} alt="Shoes" /></figure>
+    <div className="card bg-gray-200 shadow-xl">
+      <figure><img className='w-full h-60' src={img} alt="Mobile" /></figure>
       <div className="card-body">
         <h2 className="card-title text-2xl">{name}</h2>
         <p className='text-lg'>Product Category: {product_category}</p>

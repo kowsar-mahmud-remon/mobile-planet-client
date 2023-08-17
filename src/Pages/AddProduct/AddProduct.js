@@ -60,19 +60,19 @@ const AddProduct = () => {
 
   return (
     <div className='flex justify-center items-center mb-16'>
-      <div className='w-96 p-7'>
+      <div className='w-full lg:w-[50%] p-7'>
         <h2 className='text-3xl text-center text-primary my-5'>Add Product</h2>
         <form onSubmit={handleSubmit(handleAddProduct)}>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Product Name</span></label>
             <input type="text" {...register("name", {
               required: "Name is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs my-3 border border-stone-300 rounded-lg">
+          <div className="form-control w-full my-3 border border-stone-300 rounded-lg">
             <select {...register("condition_type", { required: true })}>
               <option value="">Condition Type</option>
               <option value="Excellent">Excellent</option>
@@ -82,47 +82,47 @@ const AddProduct = () => {
             {/* {errors.category && <p className='text-red-500'>{errors.category.message}</p>} */}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Photo URL</span></label>
             <input type="text" {...register("photoURL", {
               required: "photoURL is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.photoURL && <p className='text-red-500'>{errors.photoURL.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Resale Price</span></label>
             <input type="number" {...register("resale_price", {
               required: "resale_price is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.resale_price && <p className='text-red-500'>{errors.resale_price.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Original Price</span></label>
             <input type="number" {...register("original_price", {
               required: "original_price is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.original_price && <p className='text-red-500'>{errors.original_price.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Years of Use</span></label>
             <input type="number" {...register("years_of_use", {
               required: "years_of_use is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.years_of_use && <p className='text-red-500'>{errors.years_of_use.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Year of Purchase</span></label>
             <input type="number" {...register("Year_of_purchase", {
               required: "Year_of_purchase is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.Year_of_purchase && <p className='text-red-500'>{errors.Year_of_purchase.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs my-3 border border-stone-300 rounded-lg">
+          <div className="form-control w-full my-3 border border-stone-300 rounded-lg">
             <select {...register("product_category", { required: true })}>
               <option value="">Product Category</option>
               <option value="iPhone">iPhone</option>
@@ -132,27 +132,27 @@ const AddProduct = () => {
             {/* {errors.category && <p className='text-red-500'>{errors.category.message}</p>} */}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Mobile Number</span></label>
             <input type="number" {...register("mobile_number", {
               required: "mobile_number is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.mobile_number && <p className='text-red-500'>{errors.mobile_number.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Location</span></label>
             <input type="text" {...register("location", {
               required: "location is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.location && <p className='text-red-500'>{errors.location.message}</p>}
           </div>
 
-          <div className="form-control w-full max-w-xs">
+          <div className="form-control w-full">
             <label className="label"> <span className="label-text">Description</span></label>
             <input type="text" {...register("description", {
               required: "description is Required"
-            })} className="input input-bordered w-full max-w-xs" />
+            })} className="input input-bordered w-full" />
             {errors.description && <p className='text-red-500'>{errors.description.message}</p>}
           </div>
 

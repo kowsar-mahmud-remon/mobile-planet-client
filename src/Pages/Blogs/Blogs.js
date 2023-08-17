@@ -4,21 +4,21 @@ const Blogs = () => {
   return (
     <div className=' mb-28 mt-10 mx-5'>
       <h2 className='text-4xl text-center mt-14 mb-8 font-bold text-primary'>Blog Section</h2>
-      <div className="card card-compact w-full bg-base-200 shadow-xl mb-10 p-5">
+      <div className="card card-compact w-full bg-gray-200 shadow-xl mb-10 p-5">
         <div className="card-body">
           <h2 className="card-title text-3xl text-primary">What are the different ways to manage a state in a React application?</h2>
           <p className=' text-lg'>React state management is a process for managing the data that React components need in order to render themselves. This data is typically stored in the component's state object. When the state object changes, the component will re-render itself. React state management is basically half of a React app.</p>
         </div>
       </div>
 
-      <div className="card card-compact w-full bg-base-200 shadow-xl mb-10 p-5">
+      <div className="card card-compact w-full bg-gray-200 shadow-xl mb-10 p-5">
         <div className="card-body">
           <h2 className="card-title text-3xl text-primary">How does prototypical inheritance work?</h2>
           <p className=' text-lg'>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object. getPrototypeOf and Object.</p>
         </div>
       </div>
 
-      <div className="card card-compact w-full bg-base-200 shadow-xl mb-10 p-5">
+      <div className="card card-compact w-full bg-gray-200 shadow-xl mb-10 p-5">
         <div className="card-body">
           <h2 className="card-title text-3xl text-primary">What is a unit test? Why should we write unit tests?</h2>
           <p className=' text-lg'>What is meant by unit testing?
@@ -26,7 +26,7 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div className="card card-compact w-full bg-base-200 shadow-xl mb-10 p-5">
+      <div className="card card-compact w-full bg-gray-200 shadow-xl mb-10 p-5">
         <div className="card-body">
           <h2 className="card-title text-3xl text-primary">React vs. Angular vs. Vue?</h2>
           <p className=' text-lg'>
