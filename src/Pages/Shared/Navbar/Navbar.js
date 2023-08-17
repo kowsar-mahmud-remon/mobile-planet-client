@@ -55,8 +55,8 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div className="navbar bg-primary text-white flex justify-between" style={navbarShadow}>
+    <div className='w-full bg-primary pb-1' style={navbarShadow}>
+      <div className="max-w-[1440px] mx-auto navbar bg-primary text-white flex justify-between" >
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -66,7 +66,7 @@ const Navbar = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost normal-case text-xl pl-0">
+          <Link to='/' className="cursor-pointer normal-case text-xl pl-1 flex items-center">
             <img className='h-14' src={logo} alt="" />
             <h2 className='text-2xl'>Mobile Planet</h2>
           </Link>
