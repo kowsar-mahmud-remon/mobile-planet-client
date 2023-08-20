@@ -10,7 +10,7 @@ const Categories = () => {
   });
 
   return (
-    <div className=" my-20">
+    <div className=" my-20 mx-5">
       <div className='text-center my-10'>
         <h2 className='text-4xl font-bold'>Buy Used Mobile Phones At The Best Prices</h2>
       </div>

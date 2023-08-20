@@ -11,7 +11,7 @@ const Advertised = () => {
   });
 
   return (
-    <div className="">
+    <div className="px-5 py-5 bg-[#E9F5F5]">
 
       {
         advertised?.length &&

@@ -12,10 +12,10 @@ const AdvertisedCard = ({ card }) => {
         <p className='text-lg'>Resale Price: ${resale_price}</p>
         <p className='text-lg'>Original Price: ${original_price}</p>
         <p className='text-lg'>Condition Type: {condition_type}</p>
-        <p className='text-lg'>Years of use: {years_of_use}</p>
+        {/* <p className='text-lg'>Years of use: {years_of_use}</p>
         <p className='text-lg'>Years of purchase: {Year_of_purchase}</p>
         <p className='text-lg'>Description: {description}</p>
-        <p className='text-lg'>Post Time: {posted_time}</p>
+        <p className='text-lg'>Post Time: {posted_time}</p> */}
 
         {/* <div className="card-actions mt-5 justify-between">
           <button className="btn btn-primary">Available </button>

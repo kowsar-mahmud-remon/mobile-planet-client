@@ -4,9 +4,9 @@ import logo from '../../../assets/logo.png';
 
 const Footer = () => {
   return (
-    <div className="border-t-2 border-primary bg-base-200">
+    <div className="border-t-2 border-[#0264d4] bg-[#046ce0] text-white">
       <div className=' max-w-[1440px] mx-auto'>
-        <footer className="footer px-5 py-10 text-base-content">
+        <footer className="footer px-5 py-10 ">
           <div>
             <img className='w-1/3' src={logo} alt="" />
             <p className='pt-1'>Mobile Planet is the right platform <br /> for you to look for a mobile phone</p>

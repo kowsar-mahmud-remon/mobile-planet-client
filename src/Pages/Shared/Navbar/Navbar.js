@@ -23,46 +23,46 @@ const Navbar = () => {
 
 
   const menuItems = <React.Fragment>
-    <li className='font-medium'><Link to='/'>Home</Link></li>
-    <li className='font-medium'><Link to='/blogs'>Blogs</Link></li>
+    <li className=''><Link to='/'>Home</Link></li>
+    <li className=''><Link to='/blogs'>Blogs</Link></li>
     {
-      isAdmin && <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
+      isAdmin && <li className=''><Link to='/dashboard'>Dashboard</Link></li>
     }
     {
       isSeller && <>
-        <li className='font-medium'><Link to='/myproducts'>My Product</Link></li>
-        <li className='font-medium'><Link to='/addproduct'>Add A Product</Link></li>
+        <li className=''><Link to='/myproducts'>My Product</Link></li>
+        <li className=''><Link to='/addproduct'>Add A Product</Link></li>
       </>
 
     }
     {
-      isBuyer && <li className='font-medium'><Link to='/myorders'>My Orders</Link></li>
+      isBuyer && <li className=''><Link to='/myorders'>My Orders</Link></li>
 
     }
 
     {
       user?.uid ?
         <>
-          <li className='font-medium'><button onClick={handleLogOut}>SignOut</button></li>
+          <li className=''><button onClick={handleLogOut}>SignOut</button></li>
         </>
         :
-        <li className='font-medium'><Link to='/login'>Login</Link></li>
+        <li className=''><Link to='/login'>Login</Link></li>
     }
   </React.Fragment>;
 
   const navbarShadow = {
-    boxShadow: '0 3px 4px rgba(0, 0, 0, 0.4)',
+    boxShadow: '0 2px 3px rgba(0, 0, 0, 0.4)',
   };
 
   return (
-    <div className='w-full bg-primary pb-1' style={navbarShadow}>
-      <div className="max-w-[1440px] mx-auto navbar bg-primary text-white flex justify-between" >
-        <div className="navbar-start">
+    <div className='w-full bg-primary sticky top-0 z-10' style={navbarShadow}>
+      <div className="max-w-[1440px] mx-auto navbar bg-primary text-white flex justify-between py-0" >
+        <div className="navbar-start w-full">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabIndex={1} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={1} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black">
               {menuItems}
             </ul>
           </div>
@@ -76,9 +76,6 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-        </label>
       </div>
     </div>
   );
