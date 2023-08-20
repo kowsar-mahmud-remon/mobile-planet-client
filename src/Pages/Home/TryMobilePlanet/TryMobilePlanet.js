@@ -1,5 +1,6 @@
 import React from 'react';
 import backgroundImg from '../../../assets/try.jpg';
+import { Link } from 'react-router-dom';
 
 const TryMobilePlanet = () => {
   const backgroundImageStyle = {
@@ -17,9 +18,11 @@ const TryMobilePlanet = () => {
         Mobile Planet syncs with the apps you’re already used
       </p>
       <div className="flex justify-center">
-        <button className="px-8 py-4 text-[16px] font-semibold text-primary bg-white rounded-lg">
-          Start my free 14 days trial
-        </button>
+        <Link to='/category/Samsung'>
+          <button className="px-8 py-4 text-[16px] font-semibold text-primary bg-white rounded-lg">
+            Start my free 14 days trial
+          </button>
+        </Link>
       </div>
     </div>
   );

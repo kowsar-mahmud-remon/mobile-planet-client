@@ -11,11 +11,11 @@ const Advertised = () => {
   });
 
   return (
-    <div className="px-5 py-5 bg-[#E9F5F5]">
+    <div className="px-5 pt-5 pb-3 bg-[#E9F5F5]">
 
       {
         advertised?.length &&
-        <div className='mt-10 mb-20'>
+        <div className='mt-5 mb-10'>
           <div className='text-center my-10'>
             <h2 className='text-4xl font-bold'>Advertise Product</h2>
           </div>

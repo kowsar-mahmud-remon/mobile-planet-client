@@ -14,7 +14,7 @@ const Testimonial = () => {
         {data.map((item, index) => {
           return (
             <div key={index} className="flex justify-center items-center mx-auto w-full">
-              <div className={`custom_shadow py-[20px] px-[28px] bg-white rounded-md`}>
+              <div className={`custom_shadow py-[20px] px-[28px] bg-white rounded-lg`}>
                 <div className="flex items-center space-x-3">
                   <img className='w-20 h-20' src={item.img} alt="" />
                   <div className="">

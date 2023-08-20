@@ -8,6 +8,7 @@ import Testimonial from '../Testimonial/Testimonial';
 import ContactPage from '../ContactPage/ContactPage';
 import NewBanner from '../Banner/NewBanner';
 import FeaturedBrands from '../FeaturedBrands/FeaturedBrands';
+import HotDeals from '../HotDeals/HotDeals';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Categories></Categories>
       <NewBanner></NewBanner>
       <FeaturedBrands></FeaturedBrands>
+      <HotDeals></HotDeals>
       <Advertised></Advertised>
       <Experience></Experience>
       <Testimonial></Testimonial>
