@@ -28,7 +28,7 @@ const HotDeals = () => {
     <div className=' grid gap-7 py-5  grid-cols-1 md:grid-cols-2  lg:grid-cols-4 mx-5'>
       {
         data.map((image) => <Link to='/category/Samsung' key={image.id}>
-          <div className="rounded cursor-pointer">
+          <div className="rounded cursor-pointer cardShadow">
             <img className=' w-full' src={image.img} alt="" />
           </div>
         </Link>)

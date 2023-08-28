@@ -19,3 +19,16 @@ code {
 .custom_shadow {
   box-shadow: 6px 0px 16px 0px #0000001a;
 }
+
+.cardShadow:hover {
+  box-shadow: 0 0 1rem #1877f2;
+}
+
+.categoryImg {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.categoryImg:hover img {
+  transform: scale(1.1);
+}

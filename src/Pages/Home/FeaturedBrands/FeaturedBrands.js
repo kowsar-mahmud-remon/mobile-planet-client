@@ -46,7 +46,7 @@ const FeaturedBrands = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
         {
           data.map((brand) => <Link key={brand.id} to='category/Samsung'>
-            <div className=" px-12 py-3 border border-gray-300 hover:border-primary rounded cursor-pointer">
+            <div className=" px-12 py-3 border border-gray-300 hover:border-primary rounded cursor-pointer hover:bg-gray-200 cardShadow">
               <div className="flex justify-center">
                 <img className=' w-[60px] h-[60px]' src={brand.img} alt="" />
               </div>
