@@ -12,9 +12,8 @@ Live Website Link: https://mobile-planet-72baf.web.app/
 * Firebase Authentication Added
 * Back-emd Added
 
-* I am working with teams to design, develop, and maintain web applications using the MERN stack
-(MongoDB, Mongoose, Express.js, React.js, Next.js, Redux, and Typescript).
-* I am implementing responsive front-end interfaces. And also Developed backend functionality
-using Node.js and Express.js, TypeScript, including server-side logic, API endpoints, and using
-MongoDB and Mongoose for database integration.
-* I am also leading a team and continuously solving team member problems.
+● A dynamic website with a built-in admin, seller, and buyer role authorization system.
+● The seller can resell their used mobile and the buyer can buy their Mobile.
+● Admin can delete the buyers, seller, and also their products. Seller and buyer can manage their
+products and orders.
+Technology Used: ReactJs, Tailwind, DaisyUI, Firebase, Express.js, and MongoDB
