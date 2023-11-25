@@ -18,9 +18,6 @@ const MyOrders = () => {
     }
   });
 
-  console.log('mainOrderrrrs', orders);
-
-
   return (
     <div className='mx-5 mt-10 mb-28'>
       <h2 className="text-3xl">
@@ -35,14 +32,15 @@ const MyOrders = () => {
               <th>Avatar</th>
               <th>Title</th>
               <th>Price</th>
-              <th>Payment</th>
+              <th>Action</th>
+              {/* <th>Payment</th> */}
             </tr>
           </thead>
           <tbody>
             {
               orders?.map((order, i) => <tr
                 className='hover'
-                key={order._id}
+                key={order?._id}
               >
                 <th className='p-0 text-center'>{i + 1}</th>
                 <td className='p-0'>
@@ -55,8 +53,11 @@ const MyOrders = () => {
                 <td className='p-0'>{order?.item_name}</td>
                 <td className='p-0'>{order?.price}</td>
                 <td className='p-0'>
-                  <label htmlFor="confirmation-modal" className="btn btn-sm btn-primary">Pay</label>
+                  <label htmlFor="confirmation-modal" className="btn btn-sm btn-accent">Delete</label>
                 </td>
+                {/* <td className='p-0'>
+                  <label htmlFor="confirmation-modal" className="btn btn-sm btn-primary">Pay</label>
+                </td> */}
               </tr>)
             }
           </tbody>
