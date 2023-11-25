@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useBuyer from '../../hooks/useBuyer';
@@ -6,6 +6,8 @@ import useBuyer from '../../hooks/useBuyer';
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
   const [isBuyer] = useBuyer(user?.email);
+
+  const queryClient = useQueryClient();
 
   const url = `https://mobile-planet-server.vercel.app/orders?email=${user?.email}`;
 
@@ -17,6 +19,28 @@ const MyOrders = () => {
       return data;
     }
   });
+
+  const handleDelete = async (_id) => {
+    const shouldDelete = window.confirm('Are you sure you want to delete this order?');
+
+    if (!shouldDelete) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://mobile-planet-server.vercel.app/orders/${_id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        queryClient.invalidateQueries(['orders', user?.email]);
+      } else {
+        console.error('Failed to delete order');
+      }
+    } catch (error) {
+      console.error('Error deleting order:', error);
+    }
+  };
 
   return (
     <div className='mx-5 mt-10 mb-28'>
@@ -53,7 +77,7 @@ const MyOrders = () => {
                 <td className='p-0'>{order?.item_name}</td>
                 <td className='p-0'>{order?.price}</td>
                 <td className='p-0'>
-                  <label htmlFor="confirmation-modal" className="btn btn-sm btn-accent">Delete</label>
+                  <label onClick={() => handleDelete(order?._id)} htmlFor="confirmation-modal" className="btn btn-sm btn-accent">Cancel</label>
                 </td>
                 {/* <td className='p-0'>
                   <label htmlFor="confirmation-modal" className="btn btn-sm btn-primary">Pay</label>
