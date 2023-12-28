@@ -9,6 +9,9 @@ const Login = () => {
   const [loginError, setLoginError] = useState('');
   const [loginUserEmail, setLoginUserEmail] = useState('');
 
+  const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
+
+
   // const [token] = useToken(loginUserEmail);
 
   const location = useLocation();
@@ -37,6 +40,37 @@ const Login = () => {
       });
 
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+
+        const users = {
+          name: user.displayName,
+          email: user.email,
+          category: 'Buyer'
+        };
+
+        fetch('https://mobile-planet-server.vercel.app/users', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(users)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log('addUser', data);
+          });
+
+
+        navigate('/');
+      })
+      .catch(error => console.error(error));
+  };
+
   return (
     <div className='h-[600px] flex justify-center items-center'>
       <div className="w-96 p-7">
@@ -73,7 +107,7 @@ const Login = () => {
         </form>
         <p>New to Mobile Planer <Link className='text-primary' to='/signup'>Create a new Account</Link></p>
         <div className="divider">OR</div>
-        <button className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+        <button onClick={handleGoogleSignIn} className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
       </div>
     </div>
   );
