@@ -11,7 +11,7 @@ const TryMobilePlanet = () => {
   };
   return (
     <div className={` py-20 rounded`} style={backgroundImageStyle}>
-      <h2 className="text-[50px] font-bold text-center text-white">
+      <h2 className="text-[40px] lg:text-[50px] font-bold text-center text-white">
         Try Mobile Planet free for 14 days
       </h2>
       <p className="text-[18px] text-center pt-6 pb-9 text-white">
