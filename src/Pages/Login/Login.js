@@ -11,7 +11,6 @@ const Login = () => {
 
   const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
 
-
   // const [token] = useToken(loginUserEmail);
 
   const location = useLocation();
